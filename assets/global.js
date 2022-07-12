@@ -795,6 +795,8 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant.featured_media) return;
 
     const mediaGallery = document.getElementById(`MediaGallery-${this.dataset.section}`);
+    
+    console.log(mediaGallery);
     mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
@@ -850,7 +852,6 @@ class VariantSelects extends HTMLElement {
         const html = new DOMParser().parseFromString(responseText, 'text/html')
         const destination = document.getElementById(`price-${this.dataset.section}`);
         const source = html.getElementById(`price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`);
-
         // Custom: Part of the sold out UI: https://github.com/Shopify/dawn/pull/105
         const variantPickerDestination = document.querySelector('[data-variant-picker]')
         const variantPickerSource = html.querySelector('[data-variant-picker]');
