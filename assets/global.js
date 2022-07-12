@@ -796,8 +796,7 @@ class VariantSelects extends HTMLElement {
 
     const mediaGallery = document.getElementById(`MediaGallery-${this.dataset.section}`);
     
-    console.log(mediaGallery);
-    mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, false);
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     if (!modalContent) return;
